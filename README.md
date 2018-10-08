@@ -20,4 +20,4 @@ dashboard 浏览方法: 用firefox 浏览 https://master-ip:30001 ,跳出不安�
 
 安装成功后会在/root目录生成 node节点的安装包，scp到node节点解压运行 ./install-node.sh 即可加入集群
 
-未来还会更新推出双master ha版本。不过当务之急还是把promethous elk helm 插件的部署写到脚本里面，这些东西对学习临床意义非常大。请关注我的更新！
+未来还会更新推出双master ha版本。不过当务之急还是把promethous elk helm 插件的部署写到脚本里面，这些东西对学习k8s临床意义非常大。请关注我的更新！
