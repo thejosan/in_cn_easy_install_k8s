@@ -16,7 +16,7 @@ cd in_cn_easy_install_k8sv1.11.3/
 
 安装成功会生成 dashboard 的 token ，查看请自行cat token.txt 
 
-dashboard 浏览方法: 用firefox 浏览 https://nodes-ip:30001 (要用命令查看pod-dashboard所对应的node节点),跳出不安全提示，然后高级点添加网站到安全例外
+dashboard 浏览方法: 用firefox 浏览 https://master-ip:30001 ,跳出不安全提示，然后高级点添加网站到安全例外
 
 安装成功后会在/root目录生成 node节点的安装包，scp到node节点解压运行 ./install-node.sh 即可加入集群
 
