@@ -11,7 +11,7 @@ if [ "$1" == "new" ]; then
 	sudo yum -y install docker-ce
 	sudo mkdir -p /etc/docker/
 else
-	sudo yum -y install docker
+	sudo yum -y install docker-ce-17.09.1.ce
 fi
 
 sudo mkdir -p /etc/docker/
