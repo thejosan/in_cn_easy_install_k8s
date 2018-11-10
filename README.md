@@ -8,7 +8,7 @@
 
 cd in_cn_easy_install_k8sv1.11.3/
 
-./install-master.sh 
+sh install-master.sh 
 
 如果服务器是多网卡 后面接参数填ip地址 ./install-master.sh 192.168.1.2
 
