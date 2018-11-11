@@ -13,6 +13,9 @@ sudo kubectl apply -f addons/ingress/ingress.yaml
 echo -e "\033[32m## 安装metrics-server HPA对象要到这个 . ======================================================\033[0m"
 sudo kubectl apply -f addons/metrics-server/
 
+echo -e "\033[32m## 安装heapster grafana influxdb. ======================================================\033[0m"
+sudo kubectl apply -f addons/heapster/
+
 
 echo -e "\033[32m## k8s-web组件Dashboard =====================================================================\033[0m"
 sudo kubectl apply -f addons/dashboard/1.10.0/kubernetes-dashboard.yaml
