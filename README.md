@@ -6,7 +6,7 @@
 
 在matser节点 git clone  https://github.com/thejosan/in_cn_easy_install_k8s.git 
 
-cd in_cn_easy_install_k8sv1.11.3/
+cd in_cn_easy_install_k8s/
 
 sh install-master.sh 
 
