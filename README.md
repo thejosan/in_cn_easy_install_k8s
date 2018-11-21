@@ -4,7 +4,7 @@
 
 目前很多朋友帮测试过 centos 7.3 7.4 7.5 都可以一次安装成功
 
-在matser节点 git clone  https://github.com/thejosan/in_cn_easy_install_k8sv1.11.3.git 
+在matser节点 git clone  https://github.com/thejosan/in_cn_easy_install_k8s.git 
 
 cd in_cn_easy_install_k8sv1.11.3/
 
