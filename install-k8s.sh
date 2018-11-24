@@ -13,7 +13,9 @@ gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
         http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
 EOF
 
-sudo yum install -y kubelet-$VERSION kubeadm-$VERSION kubectl-$VERSION --disableexcludes=kubernetes 
+#sudo yum install -y kubelet-$VERSION kubeadm-$VERSION kubectl-$VERSION --disableexcludes=kubernetes 
+sudo yum install -y kubelet-$VERSION kubectl-$VERSION --disableexcludes=kubernetes
+tar -zxf kubeadm.tar.gz
 sudo systemctl enable kubelet
 
 sudo cat <<EOF >  /etc/sysctl.d/k8s.conf
