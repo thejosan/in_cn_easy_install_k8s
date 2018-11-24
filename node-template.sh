@@ -11,6 +11,7 @@ echo -e "\033[32m## 查Dockerfile网址 https://hub.docker.com/u/thejosan20/  ht
 /bin/bash pull-docker.sh
 echo -e "\033[32m## yum安装k8s ===============================================================================\033[0m"
 /bin/bash install-k8s.sh $K8sVersion
-
+\cp -rf kubeadm /usr/bin/kubeadm
+rm -rf kubeadm
 echo -e "\033[32m## node加入k8s集群 ===============================================================================\033[0m"
 
