@@ -23,11 +23,11 @@ echo -e "\033[32m## 安装并初始化master ===================================
 if [ ! -n "$1" ] ;then
 	echo "kubeadm init --kubernetes-version=v$K8sVersion --pod-network-cidr=10.244.0.0/16"
 	echo "Please wait a few minutes!"
-	/bin/bash kubeadm init --kubernetes-version=v$K8sVersion --pod-network-cidr=10.244.0.0/16 > init.log
+	sh kubeadm init --kubernetes-version=v$K8sVersion --pod-network-cidr=10.244.0.0/16 > init.log
 else
         echo "kubeadm init --kubernetes-version=v$K8sVersion --apiserver-advertise-address $1 --pod-network-cidr=10.244.0.0/16" 
         echo "Please wait a few minutes!"
-	/bin/bash kubeadm init --kubernetes-version=v$K8sVersion --apiserver-advertise-address $1 --pod-network-cidr=10.244.0.0/16 > init.log
+	sh kubeadm init --kubernetes-version=v$K8sVersion --apiserver-advertise-address $1 --pod-network-cidr=10.244.0.0/16 > init.log
 fi
 
 JoinCommand=`grep "kubeadm join" init.log`
