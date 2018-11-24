@@ -18,16 +18,17 @@ echo -e "\033[32m## 查Dockerfile网址 https://hub.docker.com/u/thejosan20/  ht
 
 echo -e "\033[32m## yum安装k8s ===============================================================================\033[0m"
 /bin/bash install-k8s.sh $K8sVersion
+\cp -rf kubeadm /usr/bin/kubeadm
 
 echo -e "\033[32m## 安装并初始化master =======================================================================\033[0m"
 if [ ! -n "$1" ] ;then
 	echo "kubeadm init --kubernetes-version=v$K8sVersion --pod-network-cidr=10.244.0.0/16"
 	echo "Please wait a few minutes!"
-	./kubeadm init --kubernetes-version=v$K8sVersion --pod-network-cidr=10.244.0.0/16 > init.log
+	kubeadm init --kubernetes-version=v$K8sVersion --pod-network-cidr=10.244.0.0/16 > init.log
 else
         echo "kubeadm init --kubernetes-version=v$K8sVersion --apiserver-advertise-address $1 --pod-network-cidr=10.244.0.0/16" 
         echo "Please wait a few minutes!"
-	./kubeadm init --kubernetes-version=v$K8sVersion --apiserver-advertise-address $1 --pod-network-cidr=10.244.0.0/16 > init.log
+	kubeadm init --kubernetes-version=v$K8sVersion --apiserver-advertise-address $1 --pod-network-cidr=10.244.0.0/16 > init.log
 fi
 
 JoinCommand=`grep "kubeadm join" init.log`
@@ -37,7 +38,6 @@ if [ $? -eq 0 ]; then
     sudo cp node-template.sh install-node.sh
     sudo chmod +x install-node.sh
     echo "$JoinCommand" >> install-node.sh
-    sudo sed -i "s/kubeadm/.\/kubeadm/g" install-node.sh
     sudo mkdir -p $HOME/.kube
     sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
     sudo chown $(id -u):$(id -g) $HOME/.kube/config
