@@ -23,11 +23,11 @@ echo -e "\033[32m## 安装并初始化master ===================================
 if [ ! -n "$1" ] ;then
 	echo "kubeadm init --kubernetes-version=v$K8sVersion --pod-network-cidr=10.244.0.0/16"
 	echo "Please wait a few minutes!"
-	sh kubeadm init --kubernetes-version=v$K8sVersion --pod-network-cidr=10.244.0.0/16 > init.log
+	./kubeadm init --kubernetes-version=v$K8sVersion --pod-network-cidr=10.244.0.0/16 > init.log
 else
         echo "kubeadm init --kubernetes-version=v$K8sVersion --apiserver-advertise-address $1 --pod-network-cidr=10.244.0.0/16" 
         echo "Please wait a few minutes!"
-	sh kubeadm init --kubernetes-version=v$K8sVersion --apiserver-advertise-address $1 --pod-network-cidr=10.244.0.0/16 > init.log
+	./kubeadm init --kubernetes-version=v$K8sVersion --apiserver-advertise-address $1 --pod-network-cidr=10.244.0.0/16 > init.log
 fi
 
 JoinCommand=`grep "kubeadm join" init.log`
@@ -37,7 +37,6 @@ if [ $? -eq 0 ]; then
     sudo cp node-template.sh install-node.sh
     sudo chmod +x install-node.sh
     echo "$JoinCommand" >> install-node.sh
-    sudo sed -i "s/kubeadm/sh kubeadm/g" install-node.sh
     sudo mkdir -p $HOME/.kube
     sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
     sudo chown $(id -u):$(id -g) $HOME/.kube/config
