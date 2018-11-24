@@ -37,6 +37,7 @@ if [ $? -eq 0 ]; then
     sudo cp node-template.sh install-node.sh
     sudo chmod +x install-node.sh
     echo "$JoinCommand" >> install-node.sh
+    sudo sed -i "s/kubeadm/sh kubeadm/" install-node.sh
     sudo mkdir -p $HOME/.kube
     sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
     sudo chown $(id -u):$(id -g) $HOME/.kube/config
