@@ -13,7 +13,7 @@ cd in_cn_easy_install_k8s/
 
 sh install-master.sh 
 
-如果服务器是多网卡 后面接参数填ip地址 ./install-master.sh 192.168.1.2
+如果服务器是多网卡 后面接参数填ip地址 sh install-master.sh 192.168.1.2
 
 插件: dashboard flannel nginx-ingress(ds默认装在default) 如果有需要修改命名空间请修改 install-addons.sh 里面的参数
 
