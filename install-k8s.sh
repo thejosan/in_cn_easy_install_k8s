@@ -1,7 +1,7 @@
 #!/bin/bash
 #yum 安装 k8s组件 ，阿里云的源
-VERSION="1.11.3"
-#VERSION=$1
+#VERSION="1.11.3"
+VERSION=$1
 sudo cat <<EOF > /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
 name=Kubernetes
@@ -13,7 +13,8 @@ gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
         http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
 EOF
 
-sudo yum install -y kubelet-$VERSION kubeadm-$VERSION kubectl-$VERSION --disableexcludes=kubernetes 
+sudo yum install -y kubelet-$VERSION
+sudo yum install -y kubeadm-$VERSION kubectl-$VERSION --disableexcludes=kubernetes 
 
 tar -zxf kubeadm.tar.gz
 rm -rf kubeadm.tar.gz
