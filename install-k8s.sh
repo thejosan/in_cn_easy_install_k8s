@@ -1,7 +1,7 @@
 #!/bin/bash
 #yum 安装 k8s组件 ，阿里云的源
-#VERSION="1.11.3"
-VERSION=$1
+VERSION="1.11.3"
+#VERSION=$1
 sudo cat <<EOF > /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
 name=Kubernetes
