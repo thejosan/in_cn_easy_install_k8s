@@ -4,11 +4,11 @@ NameSpace="default"
 echo -e "\033[32m## 安装网络组件flannel. =====================================================================\033[0m"
 sudo kubectl apply -f addons/flannel/kube-flannel.yml
 
-echo -e "\033[32m## 安装反响代理组件nginx-ingress. ===========================================================\033[0m"
-echo -e "\033[32m## 默认 ingress 安装在default. 自定义命名空间请修改 install-addons.sh脚本中的相关参数 \033[0m"
-sudo cp addons/ingress/ingress-Template.yaml addons/ingress/ingress.yaml
-sudo sed -i "s/\[namespace\]/$NameSpace/g" addons/ingress/ingress.yaml
-sudo kubectl apply -f addons/ingress/ingress.yaml
+#echo -e "\033[32m## 安装反响代理组件nginx-ingress. ===========================================================\033[0m"
+#echo -e "\033[32m## 默认 ingress 安装在default. 自定义命名空间请修改 install-addons.sh脚本中的相关参数 \033[0m"
+#sudo cp addons/ingress/ingress-Template.yaml addons/ingress/ingress.yaml
+#sudo sed -i "s/\[namespace\]/$NameSpace/g" addons/ingress/ingress.yaml
+#sudo kubectl apply -f addons/ingress/ingress.yaml
 
 echo -e "\033[32m## 安装metrics-server HPA对象要到这个 . ======================================================\033[0m"
 sudo kubectl apply -f addons/metrics-server/
