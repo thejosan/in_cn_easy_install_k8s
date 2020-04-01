@@ -1,5 +1,7 @@
 更新日志 2020-4-1 更新版1.16.7版本 由于本人github网络老是出问题,commit老失败 现已经将项目移植码云。
-git clone -b 1.16.7 https://gitee.com/thejosan/in_cn_easy_install_k8s.git   而且镜像也移到阿里云的镜像仓库
+==================================================
+git clone -b 1.16.7 https://gitee.com/thejosan/in_cn_easy_install_k8s.git   
+而且镜像也移到阿里云的镜像仓库
 
 更新日志 2018-11-24  重新编译kubeadm 将所有证书有效期提升到10年，解决官方kubeadm证书1年后失效问题
 ==================================================
